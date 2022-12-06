@@ -12,33 +12,65 @@
 
 
 
-function isPalindrome (word) {
+// function isPalindrome (word) {
 
-    let reversedWord = "";
+//     let reversedWord = "";
 
-    for(let i = word.length -1; i >= 0; i--){
+//     for(let i = word.length -1; i >= 0; i--){
 
-        reversedWord += word.charAt(i);
+//         reversedWord += word.charAt(i);
 
-    }
+//     }
 
-    if (reversedWord.toLowerCase() === word.toLowerCase()){
+//     if (reversedWord.toLowerCase() === word.toLowerCase()){
 
-        console.log(`${word} is palindrome`);
+//         console.log(`${word} is palindrome`);
 
-    } else {
+//     } else {
 
-        console.log(`${word} isn't palindrome`);
+//         console.log(`${word} isn't palindrome`);
 
-    }
+//     }
     
-    return reversedWord;
+//     return reversedWord;
+// }
+
+// const userWord = prompt("inserisci una parola");
+
+// isPalindrome (userWord);
+
+
+function getRandomNumber (min, max){
+
+    const randomNuber = Math.floor(Math.random() * ( max - min + 1) ) + min;
+
+    return randomNuber;
+
 }
 
-const userWord = prompt("inserisci una parola");
 
-isPalindrome (userWord);
+function oddOrEven (number) {
+    if (number % 2 === 0){
+        return "pari";
+    } else {
+        return "dispari";
+    }
+}
 
+const playerChoice = prompt("Pari o dispari?").toLocaleLowerCase().trim();
 
+console.log("L'utente ha scelto:" + " " + playerChoice);
 
+const playerNumber = parseInt(prompt("Inserisci un numero da 1 a 5"));
 
+console.log("L'utente ha scelto:" + " " + playerNumber);
+
+const aINumber = getRandomNumber (1, 5);
+
+console.log("AI number:" + " " + aINumber);
+
+const sum = playerNumber + aINumber;
+
+if (oddOrEven(sum) === playerChoice){
+    console.log("Hai vinto")
+}
